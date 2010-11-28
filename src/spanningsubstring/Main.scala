@@ -13,7 +13,7 @@ object Main {
 
   type E = Char
 
-  def span(goal: Set[E], pat: Iterable[E]) :(Int,Int) = {
+  def span(goal: Set[E], pat: Iterable[E]): (Int,Int) = {
     var pos = 0
     var len = 0
     val map = LinkedHashMap[E,Int]()
@@ -30,7 +30,7 @@ object Main {
     return (pos, len)
   }
 
-  def main(args: Array[String]) :Unit = {
+  def main(args: Array[String]): Unit = {
     val goal = args(0)
     val pat = args(1)
     val (pos, len) = span(goal.toSet, pat)
