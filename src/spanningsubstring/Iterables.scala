@@ -2,18 +2,16 @@ package spanningsubstring
 
 import scala.collection.mutable.LinkedHashMap
 
-object Strings {
-
-  type E = Char
+object Iterables {
 
   /**
-   * Given a set of characters and an input string, finds the shortest
-   * substring of the input containing all the characters in the set.
+   * Given a sequence of elements and a set of elements, finds the shortest
+   * subsequence containing all the elements in the set.
    * <p>
    * For example, "CYBXA" is the shortest substring of "ZCYBXAW" that
    * contains the characters of "ABC".
    */
-  def span(goal: Set[E], pat: Iterable[E]): (Int,Int) = {
+  def span[E](pat: Iterable[E], goal: Set[E]): (Int,Int) = {
     var pos = 0
     var len = 0
     val map = LinkedHashMap[E,Int]()
