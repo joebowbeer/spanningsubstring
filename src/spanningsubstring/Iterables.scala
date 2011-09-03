@@ -15,7 +15,7 @@ object Iterables {
     var pos = 0
     var len = 0
     val map = LinkedHashMap[E,Int]()
-    pat.zipWithIndex.filter(p => goal(p._1)).foreach { p =>
+    pat.view.zipWithIndex.filter(p => goal(p._1)).foreach { p =>
       // append next E->index to linked map
       (map -= p._1) += p
       // if we have a shorter span, record it
